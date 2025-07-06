@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
     const publicPaths = ['/', '/auth/error', '/api/google-auth'];
     if (publicPaths.includes(pathname) || pathname.startsWith('/api/google-auth')) {
         if(currentUser){
-            return NextResponse.redirect(new URL('/dashboard', request.url));
+            // return NextResponse.redirect(new URL('/dashboard', request.url));
         }else{
             return NextResponse.next();
         }

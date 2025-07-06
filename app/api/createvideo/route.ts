@@ -628,7 +628,7 @@ function cleanPublicDir() {
   if (!fs.existsSync(publicDir)) return;
 
   fs.readdirSync(publicDir).forEach((file) => {
-      if (file !== "404.jpg" && file !== "speech.mp3") {
+      if (file !== "404.jpg" && file !== "speech.mp3" && file !== "login.jpg") {
           const filePath = path.join(publicDir, file);
           fs.rmSync(filePath, { recursive: true, force: true }); // Delete file or folder
       }

@@ -25,12 +25,21 @@ export default function Home() {
   };
   
   return (
-    <div className="grid place-content-center w-full">
-      <h1 className="text-center text-3xl font-bold mb-10">Createo-ai</h1>
-      <Button variant={"outline"} onClick={googleSignIn}>
-        {loading && <Loader2 className="animate-spin" />}
-        Continue with Google
-      </Button>
+    <div className="grid grid-cols-2 h-[100vh]">
+      <div className="h-full relative">
+        <div className="absolute top-[42%] left-[28%] translate-x-[-50%] translate-y-[-50%]">
+          <h1 className="text-white text-6xl font-semibold">CreateoAI</h1>
+          <p className="text-white italic text-sm mt-2">AI powered video creation</p>
+        </div>
+        <img src="login.jpg" className="h-full object-cover object-left" alt="login" />
+      </div>
+
+      <div className="h-full grid place-content-center">
+          <Button variant={"outline"} size={"lg"} onClick={googleSignIn}>
+            {loading ? <Loader2 className="animate-spin" /> : <img width={20} src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw"/>}
+            Continue with Google
+          </Button>
+      </div>
     </div>
   );
 }

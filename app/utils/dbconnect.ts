@@ -34,6 +34,7 @@ export const user_videos = pgTable("videos", {
     format: varchar("format", {length: 20}),
     bytes: integer("bytes"),
     googleId: varchar("google_id", {length: 255}).notNull().references(() => users.googleId),
+    created_at: timestamp("created_at", {mode: "date"})
 });
 
 export const platform_uploads = pgTable("platform_uploads", {
@@ -44,6 +45,7 @@ export const platform_uploads = pgTable("platform_uploads", {
     platform: varchar("platform", { length: 20 }).notNull(), // 'youtube', 'instagram', 'facebook'
     platform_video_id: varchar("platform_video_id", { length: 255 }).notNull(),
     url: text("url").notNull(),
+    created_at: timestamp("created_at", {mode: "date"})
     
 });
 
